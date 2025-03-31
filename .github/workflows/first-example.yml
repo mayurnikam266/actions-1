@@ -9,8 +9,15 @@ jobs:
             - name: checkout Repo
               uses: actions/checkout@v4
 
-            - name: welcome message
-              run: echo "my first github action"  # Added 'run' 
+            - name: list and read file
+              run: |
+                   echo "my first github action"  # Added 'run' 
+                   ls-ltra
+                   cat README.md
+            - name: Generate ASCII network
+              run: cowsay -f dragon "Hello, buddy!" >> dragon.txt
 
-            - name: list files
-              run: cat README.md  # Fixed indentation
+
+           # - name: list files
+           #  run: cat README.md  # Fixed indentation
+            
