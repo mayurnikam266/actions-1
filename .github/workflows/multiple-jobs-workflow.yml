@@ -1,7 +1,7 @@
 name: multiple jobs workflow
 
 on: 
-    pusj
+    push
 
 jobs:
     build_job_1:
