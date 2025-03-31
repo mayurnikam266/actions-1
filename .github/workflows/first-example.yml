@@ -1,13 +1,13 @@
-name : My first workflow
+name: My first workflow
 
 on: push
 
 jobs:
     first_job:
-        runs-on:  ubuntu-latest
+        runs-on: ubuntu-latest
         steps:
             - name: welcome message
-            - run: echo "my first github action"
-            
+              run: echo "my first github action"  # Added 'run' 
+
             - name: list files
-            - run: cat README.md
+              run: cat README.md  # Fixed indentation
