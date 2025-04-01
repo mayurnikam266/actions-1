@@ -1,5 +1,5 @@
 
-name: trigger events
+name: concurrency
 on: 
   workflow_dispatch: 
   ## crontab guru
