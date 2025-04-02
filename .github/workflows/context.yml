@@ -1,0 +1,19 @@
+name: Simple Workflow for context
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Runner Info
+        run: echo "Running on $(uname -a)"
+
+      - name: Print GitHub Context
+        run: echo '${{ toJson(github) }}'
+
+      - name: Print Job Details
+        run: echo "Job running on runner OS: ${{ runner.os }}"
+
+      - name: Completion Message
+        run: echo "Simple workflow executed successfully!"
