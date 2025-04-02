@@ -1,9 +1,9 @@
-name: Simple Workflow for context
+name: Dump GitHub Context
 
 on: [push, pull_request]
 
 jobs:
-  build:
+  context_dump:
     runs-on: ubuntu-latest
     steps:
       - name: Print Runner Info
@@ -12,8 +12,17 @@ jobs:
       - name: Print GitHub Context
         run: echo '${{ toJson(github) }}'
 
-      - name: Print Job Details
-        run: echo "Job running on runner OS: ${{ runner.os }}"
+      - name: Print Job Context
+        run: echo '${{ toJson(job) }}'
+
+      - name: Print Steps Context
+        run: echo '${{ toJson(steps) }}'
+
+      - name: Print Runner Context
+        run: echo '${{ toJson(runner) }}'
+
+      - name: Print Environment Variables
+        run: printenv | sort
 
       - name: Completion Message
-        run: echo "Simple workflow executed successfully!"
+        run: echo "GitHub context dump completed!"
